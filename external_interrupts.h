@@ -34,6 +34,7 @@
 #ifndef EXTERNAL_INTERRUPTS_H_
 #define EXTERNAL_INTERRUPTS_H_
 #include <avr/io.h>
+//common.h is not required, remove it if you like to get rid of errors
 #include "common.h"
 
 typedef void (*func_ptr)();
