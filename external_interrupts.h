@@ -2,7 +2,7 @@
  * external_interrupts.h
  *
  *  Created on: 3 cze 2018
- *      Author: rafal
+ *      Author: ravmiecznik@gmail.com
  *
  *      This library supports External interrupts for atmega128.
  *      The External Interrupts are triggered by the INT7:0 pins.
@@ -20,6 +20,14 @@
  *		EIMSK
  *		INT7 INT6 INT5 INT4 INT3 INT2 INT1 IINT0
  *
+ *
+ *		Usage:
+ *		ExtInterruptB interrupt_pin7(ExtInterruptB::int7, ExtInterruptB::change_triggers_interrupt, optional_function_ptr);
+ *		optional_function_ptr: pointer to function which will be executed in given interrup triggered by porivided pin
+ *
+ *		interrupt_pin7.set_interrupt_sense_control(ExtInterruptB::rising_edge_triggers_interrupt);
+ *		interrupt_pin7.bind_function_to_interrupt(new_pointer);
+ *		interrupt_pin7.disable_interrupt();
  *
  */
 
