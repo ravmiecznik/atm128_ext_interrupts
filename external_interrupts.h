@@ -73,7 +73,7 @@ struct register_bits{
 struct eimsk_register:register_bits
 {
 	union{
-		uint8_t register_bits;
+		uint8_t reg;
 		struct{
 			bool int0:1;
 			bool int1:1;
@@ -85,12 +85,16 @@ struct eimsk_register:register_bits
 			bool int7:1;
 		};
 	};
+	eimsk_register & operator=(uint8_t val){
+		reg = val;
+		return *this;
+	}
 };
 
 struct eicra_register:register_bits
 {
 	union{
-		uint8_t register_bits;
+		uint8_t reg;
 		struct{
 			bool ics00:1;
 			bool ics01:1;
@@ -108,6 +112,10 @@ struct eicra_register:register_bits
 			uint8_t ics3:2;
 		};
 	};
+	eicra_register & operator=(uint8_t val){
+		reg = val;
+		return *this;
+	}
 };
 
 struct eicrb_register:register_bits
